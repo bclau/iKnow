@@ -35,5 +35,13 @@ function myEventHandler() {
     alert(str) ;
 }
 
+function violateMe(answer) {
+    //alert("Sorry dude, you submitted your answer now! It is: " + answer.value);
+    if (answer.value === "yes") {
+        alert("Duuuuuuuuude, you are good!!");
+    } else {
+        alert(":'-(");
+    }
+}
 
 // ...additional event handlers here...
