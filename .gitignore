@@ -38,3 +38,4 @@ node_modules
 !/*.xdk
 !/.gitignore
 !/*.png
+!*.js
