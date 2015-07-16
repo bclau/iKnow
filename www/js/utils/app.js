@@ -23,7 +23,9 @@ function init_game() {
     window.app.gotoState("mainMenu");
     window.app.gotoState("game");
     
-    var server_connection = SocketConnection(LOCATION, PORT);
+    var server_connection = new SocketConnection(LOCATION, PORT);
+    server_connection.startGame();
+    server_connection.sendAnswer(10);
 }
 
 // ...additional event handlers here...

@@ -3,12 +3,26 @@
 var util = require('util'),	// Utility resources (logging, object inspection, etc)
     io = require('socket.io');	// Socket.IO
 
-console.log("something");
-console.log(io);
+/**** UTILITY FUNCTIONS ****/
+
+var generateUUID = function() {
+    var d = new Date().getTime();
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c) {
+        var r = (d + Math.random()*16)%16 | 0;
+        d = Math.floor(d/16);
+        return (c=='x' ? r : (r&0x7|0x8)).toString(16);
+    });
+    return uuid.toUpperCase();
+}
+
 
 /*** VARIABLES ****/
 
 var socket;     // Socket controller
+var game_sessions = {};
+var players = {};
+var game_id = generateUUID();
+game_sessions[game_id] = [];
 
 /**** FUNCTIONS ****/
 
@@ -41,11 +55,15 @@ function onSocketConnection(client) {
     // this will be called when a new client connects.
     // this will setup different event listeners.
 	util.log("New player has connected: " + client.id);
+    
+    players[client.id] = client;
 
 	// Listen for client disconnected
 	client.on("disconnect", onClientDisconnect);
     
     client.on("hello", onClientHello);
+    client.on("game_start", onGameStart);
+    client.on("player_answer", onPlayerAnswer);
 }
 
 // Socket client has disconnected
@@ -57,8 +75,19 @@ function onClientDisconnect() {
 }
 
 function onClientHello(client) {
-    util.log("Client " + client.id +" says hello!");
-    util.log(client);
+    util.log("Client " + this.id +" says hello!");
+}
+
+function onGameStart() {
+    console.log("Player " + this.id + " wants to join!");
+    game_sessions[game_id].push(this.id);
+    var question = {question: "Ce faci?", 
+                    answers: ['bine', 'foarte bine', 'da', '...?']};
+    this.broadcast.emit('game_question', question);
+}
+
+function onPlayerAnswer(answer) {
+    console.log("Player answered: " + answer);
 }
 
 /**** START ***/
