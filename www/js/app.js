@@ -17,4 +17,11 @@
 // NOTE: see app.initEvents() in init-app.js for event handler initialization code.
 
 
+
+function init_game() {
+    window.app.initialise()
+    window.app.gotoState("mainMenu");
+    window.app.gotoState("game");
+}
+
 // ...additional event handlers here...

@@ -79,6 +79,8 @@ app.initEvents = function() {
     // exit to idle state and wait for app events...
 
     app.consoleLog(fName, "exit") ;
+
+    init_game()
 } ;
 document.addEventListener("app.Ready", app.initEvents, false) ;
 
