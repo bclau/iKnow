@@ -19,9 +19,8 @@
 
 
 function init_game() {
-    window.app.initialise()
+    window.app.initialise();
     window.app.gotoState("mainMenu");
-    window.app.gotoState("game");
     
     var server_connection = SocketConnection(LOCATION, PORT);
 }
