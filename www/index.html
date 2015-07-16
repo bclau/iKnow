@@ -40,8 +40,8 @@
         <p class="align-center">
             <input type="button" id="id_btnHello" value="Touch Me">
             <p>Do you like this question?</p>
-            <input type="radio" name="question" value="yes" onclick="violateMe(this)">yes<br/>
-            <input type="radio" name="question" value="no" onclick="violateMe(this)">no
+            <input type="radio" name="question" value="yes" onclick="displayUsernameAndScore()">yes<br/>
+            <input type="radio" name="question" value="no" onclick="Popup.show('popup');return false;">no
         </p>
     </div>
     
@@ -72,7 +72,17 @@
     
     <div id="game">
     
-    
+    <!-- Jiayi's -->
+
+        <div id="popup" class='centrar' >
+            <p><center><b><font size="5">Username</font></b></center></p>
+            <p><center><b><font size="5">Score: 9999</font></b></center></p>
+            <div id="auxButtonDiv">
+                <button type="button" onclick=hidePopup()><center>Accept</center></button>
+            </div>
+           
+             
+        </div>
     </div>
     
     <script src="cordova.js"></script>          <!-- "Phantom" cordova.js required for projects that use plugins -->

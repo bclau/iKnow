@@ -10,6 +10,7 @@
 /* Disable certain interactions on touch devices */
 /* SOURCE: https://github.com/ftlabs/fastclick/blob/master/examples/input.html */
 /* LICENSE: https://github.com/ftlabs/fastclick/blob/master/LICENSE */
+@import "compass/css3";
 body {
     -webkit-touch-callout: none ;
     -webkit-text-size-adjust: none ; -ms-text-size-adjust: none ;
@@ -45,4 +46,34 @@ body {
 
 .align-center {
     text-align: center ;
+}
+
+/*JIAYI's*/
+#popup{
+    background-color: #11A8D6;
+    border-radius: 5px;
+    width: 250px;
+    padding: 5px;
+    border: 0px;
+    margin: 25px;
+    display:none;
+    vertical-align: middle;
+}
+
+.centrar{
+    position: absolute;
+    /*nos posicionamos en el centro del navegador*/
+    top:30%;
+}
+
+#auxButtonDiv{
+    text-align: center;
+}
+
+.hidden {
+    display:none;
+}
+
+.visible{
+    visibility: visible;
 }

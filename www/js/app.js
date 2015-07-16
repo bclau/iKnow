@@ -45,3 +45,25 @@ function violateMe(answer) {
 }
 
 // ...additional event handlers here...
+
+function displayUsernameAndScore(){
+    var name = "username";
+    var score = 9999;
+    
+    document.getElementById("popup").style.display = 'block';
+    // alert(name +"\n"+score);
+    // Custom namespace
+    
+}
+
+function hidePopup(){
+      document.getElementById("popup").style.display = 'none';
+}
+
+ $(document).click(function() {
+   document.getElementById("popup").style.display = 'none';
+ })
+
+ $('#popup').click(function(e){
+     e.stopPropagation();
+ });
