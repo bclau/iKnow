@@ -4,11 +4,9 @@
   * Please see the included README.md file for license terms and conditions.
   -->
 <head>
-    <title>Blank Cordova Mobile App Template</title>
+    <title>Suggest Question</title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
-    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
-    <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
     <style>
@@ -31,33 +29,34 @@
 
 <body>
     
-    <div id="mainMenu">
-    
-        
-    </div>
-    
-    <div id="settings">
-    
-    
-    </div>
-    
-    <div id="aboutUs">
-    
-        
-    </div>
-    
     <div id="suggestQuestion">
-
-    
-    </div>
-    
-    <div id="tutorial">
-    
-    
-    </div>
-    
-    <div id="game">
-    
+        <p> Do you miss any interesting question in here? Let us know.</p>
+        <p>We always like to hear some new ideas.</p>    
+     <!--    <form name="suggestQuestion" onsubmit="validateForm()"  method="post">   -->      
+<p>Write your question:</p>
+<input type="text" name="question" placeholder="Type here...">
+<p>Choose one of the domains from below:</p>
+<p><input id="movies" type="radio" name="domain" value="movies">movies</p>
+<p><input id="music"type="radio" name="domain" value="music">music</p>
+<p><input id="art"type="radio" name="domain" value="art">art</p>
+<p><input id="geography" type="radio" name="domain" value="geography">geography</p>
+<p><input id="sports"type="radio" name="domain" value="sports">sports</p>
+<p><input id="history"type="radio" name="domain" value="history">history</p>
+<p><input id="culture" type="radio" name="domain" value="culture">culture</p>
+<p><input id="intelligence"type="radio" name="domain" value="intelligence">intelligence</p>
+<p><input id="science" type="radio" name="domain" value="science">science</p>
+<p><input id="literature" type="radio" name="domain" value="literature">literature</p>
+<p>Correct answer:</p>
+<input id="answer" type="text" name="answer" placeholder="Type here...">
+<br>
+<p>Wrong answer1:</p>    
+<input type="text" id="wrong1" placeholder="Type here...">
+<p>Wrong answer2:</p>   
+<input type="text" id="wrong2" placeholder="Type here...">
+<p>Wrong answer3:</p>    
+<input type="text" id="wrong3" placeholder="Type here...">
+        <p><button value="Submit" onclick="validateForm()" >Submit</button></p>         
+       <!--  </form>       -->
     
     </div>
     
