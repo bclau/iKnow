@@ -5,19 +5,20 @@
 // write code DOWN from here.
 
 function playmenu(){
-    alert("Let's play");
+    window.app.gotoState("game");
 }
 
 function settingsmenu(){
-    alert("settings menu,you");
+    window.app.gotoState("settings");
 }
 
 function aboutusmenu(){
-    alert("App was created by");
+    window.app.gotoState("aboutUs");
 }
 
-function leaderboardmenu(){
-    alert("You are nothing but a leader");
+function leaderboard(){
+    window.app.gotoState("leaderboard");
+  
 }
 
 function exitapp(){

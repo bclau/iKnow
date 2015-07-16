@@ -53,6 +53,29 @@ window.app = window.app || {} ;         // there should only be one of these...
     var _gameExit = function() {
         hideState('game');  
     };
+    var _settingsEntry = function() {
+        showState('settings');  
+    };
+    
+    var _settingsExit = function() {
+        hideState('settings');  
+    };
+    
+    var _aboutUsEntry = function() {
+        showState('aboutUs');  
+    };
+    
+    var _aboutUsExit = function() {
+        hideState('aboutUs');  
+    };
+    
+     var _leaderboardEntry = function() {
+        showState('leaderboard');  
+    };
+    
+    var _leaderboardExit = function() {
+        hideState('leaderboard');  
+    };
     
     // create the state machine.
     var stateModel = new fsm.StateMachine('states');
@@ -64,13 +87,24 @@ window.app = window.app || {} ;         // there should only be one of these...
     var game = new fsm.State('game', stateModel).entry(_gameEntry)
                                                 .exit(_gameExit);
     
+    var settings = new fsm.State('settings', stateModel).entry(_settingsEntry)
+                                                .exit(_settingsExit);
+    
+    var aboutUs = new fsm.State('aboutUs', stateModel).entry(_aboutUsEntry)
+                                                .exit(_aboutUsExit);
+    
+    var leaderboard = new fsm.State('leaderboard', stateModel).entry(_leaderboardEntry)
+                                                .exit(_leaderboardExit);
+    
+    
     // create links between states.
     initial.to(mainMenu);
     
     // links can also have conditions like this:
     mainMenu.to(game).when(function (new_state) { return "game" === new_state; });
-    
-    
+    mainMenu.to(settings).when(function (new_state) { return "settings" === new_state; });
+    mainMenu.to(aboutUs).when(function (new_state) { return "aboutUs" === new_state; });
+    mainMenu.to(leaderboard).when(function (new_state) { return "leaderboard" === new_state; });
     
     // create state machine context.
     var stateContext = new fsm.Context();
