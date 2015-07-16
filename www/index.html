@@ -41,8 +41,32 @@
             <input type="button" id="id_btnHello" value="Touch Me">
             <p>Do you like this question?</p>
             <input type="radio" name="question" value="yes" onclick="violateMe(this)">yes<br/>
-            <input type="radio" name="question" value="no" onclick="violateMe(this)">no
-        </p>
+            <input type="radio" name="question" value="no" onclick="violateMe(this)">no<br/>
+            <script>
+    var qTimer = function(time){
+        if(questionTime > -.2){
+        document.getElementById("qT").innerHTML = time;
+        questionTime = questionTime-.1;
+        if (time <= 0){alert("end of time");stopTime(questionTimer);return;}}
+    }
+        
+    var gTimer = function(time){
+        gameTime = gameTime-1;
+        document.getElementById("gT").innerHTML = time;
+        if (time === 0){alert("game ends");return;}       
+    }
+var questionTime = 10;
+var gameTime = 300;
+var questionTimer=setInterval(function(){qTimer(questionTime)},100);
+var gameTimer=setInterval(function(){gTimer(gameTime)},1000); 
+var stop=clearTimeout
+function stopTime(timer){
+    clearInterval(timer);
+}
+        </script>
+        <p id="qT"></p><br/>
+        <p id="gT"></p>
+       
     </div>
     
     <div id="mainMenu">
