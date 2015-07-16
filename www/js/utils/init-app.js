@@ -21,7 +21,7 @@ window.app = window.app || {} ;         // there should only be one of these...
 
 // Set to "true" if you want the console.log messages to appear.
 
-app.LOG = app.LOG || false ;
+app.LOG = app.LOG || true ;
 
 app.consoleLog = function() {           // only emits console.log messages if app.LOG != false
     if( app.LOG ) {
