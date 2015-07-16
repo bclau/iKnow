@@ -56,9 +56,14 @@
     
     </div>
     
-    <div id="game" style="display: none">
-    game
-    
+    <div id="game" style="display: none">   
+        <table>
+            <tr><p class = "align-center" id="titulo"> How do you say ... in serbian?</p></tr>
+            <tr><p class = "answer" onclick="correct(this)">Correct</p></tr>
+            <tr><p class = "answer" onclick="incorrect(this)">Incorrect 1</p></tr>
+            <tr><p class = "answer" onclick="incorrect(this)">Incorrect 1</p></tr>
+            <tr><p class = "answer" onclick="incorrect(this)">Incorrect 1</p></tr>
+        </table>
     </div>
     
     <script src="cordova.js"></script>          <!-- "Phantom" cordova.js required for projects that use plugins -->
@@ -75,6 +80,7 @@
     <!-- Until here! -->
 
     <script src="js/utils/app.js"></script>           <!-- for your event code, see README and file comments for details -->
+    <script src="js/game.js"></script>           <!-- for your event code, see README and file comments for details -->
     <script src="js/utils/init-app.js"></script>      <!-- for your init code, see README and file comments for details -->
     <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see file for details -->
         

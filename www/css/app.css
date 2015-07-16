@@ -46,3 +46,18 @@ body {
 .align-center {
     text-align: center ;
 }
+/*"#1E6B84"";*/
+.answer{
+    background-color: #26ABE2 ;
+    color: white;
+    font-weight:bold;
+    margin: 5px 15px 1px 15px;
+    padding: 5px;
+}
+
+
+#titulo{
+    font-size: 150%;
+    color:black;
+    font-weight: bolder;
+}
