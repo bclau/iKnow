@@ -31,8 +31,27 @@
 
 <body>
     
+    <div style='hidden'>
+        <p class="align-center">
+            Iknow
+        </p>
+        <br>
+    </div>
+    
     <div id="mainMenu" style="display: none">
-    mainMenu
+        </textarea><br/>
+        <p class="align-center">
+            <button type="menubutton" name="play" onclick="playmenu()">Play Now</button><br/>
+            </textarea><br/>
+            <button type="settingsbutton" name="settings" onclick="settingsmenu()">Settings</button><br/>
+            </textarea><br/>
+            <button type="aboutusbutton" name="about us" onclick="aboutusmenu()">About Us</button><br/>
+            </textarea><br/>
+            <button type="leaderboard" name="leaderboard" onclick="leaderboardmenu()">Leaderboard</button><br/>
+            </textarea><br/>
+            <button type="exit" name="exit" onclick="exitapp()">Exit</button><br/>
+            </textarea><br/>
+        <p class="align-left">
         
     </div>
     
@@ -71,6 +90,7 @@
     <script src="js/utils/constants.js"></script>
     <script src="js/utils/state_machine.js"></script>
     <script src="js/utils/socket_connection.js"></script>
+    <script src="js/mainMenu.js"></script>
     
     <!-- Until here! -->
 
